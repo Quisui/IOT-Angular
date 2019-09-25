@@ -1,0 +1,25 @@
+<div class="container"> <!-- contenedor Principal -->
+  <div class="container-fluid">
+    <div class="row justify-content-md-center">
+      <div class="col-auto">
+        <h1 style="font-family: 'Times New Roman', Times, serif; text-align: center; font: bolder">Proyecto de IoT |
+          Casa Domótica</h1>
+      </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 offset-4">
+                <button type="button" class="btn btn-outline-warning" style="margin-right: 10px" [routerLink]="['/']">Inicio</button>
+                <button type="button" class="btn btn-outline-primary" style="align-self: center;" [routerLink]="['/movimiento']">Bitacora Movimiento</button>
+                <button type="button" class="btn btn-outline-secondary" style="margin-left: 5px" [routerLink]="['/luz']">Control de luz</button>
+                <br>
+              </div>
+        </div>
+    </div>
+
+  </div>
+  <!--Contenido-->
+  <router-outlet>
+
+  </router-outlet>
+</div>

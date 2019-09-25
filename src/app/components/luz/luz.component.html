@@ -1,0 +1,27 @@
+<div class="col-12 text-center">
+  <!-- contenedor de luces -->
+  <h2 style="font-family: 'Times New Roman', Times, serif; text-align: center; font: bolder">Control de
+    Luces</h2>
+  <br>
+  <div class="alert alert-success" *ngIf="status=='success'">
+    Luz encendida
+  </div>
+  <div class="alert alert-danger" *ngIf="status=='error'">
+    Valio el back-end
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <input type="submit" value="LucesCocina" class="btn btn-outline-primary" (click)="onSubmit(1)" />
+      <br>
+      <input type="submit" value="Luces baño 1" class="btn btn-outline-secondary mt-1" (click)="onSubmit(2)" />
+      <br>
+      <input type="submit" value="Luces cuarto gamer" class="btn btn-outline-dark mt-1" (click)="onSubmit(3)" />
+    </div>
+
+    <div class="col-6">
+      <input type="submit" value="Luces Dormitorio 1" class="btn btn-outline-success" (click)="onSubmit(4)" />
+      <br>
+      <input type="submit" value="Luces Dormitorio 2" class="btn btn-outline-warning mt-1" (click)="onSubmit(5)" />
+    </div>
+  </div>
+</div>
