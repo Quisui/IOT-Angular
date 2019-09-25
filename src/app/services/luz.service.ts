@@ -13,9 +13,7 @@ export class LuzService{
   ){
     this.url = global.url;
   }
-  test(){
-    return "Hola desde servicio";
-  }
+
   sendId(id):Observable<any>{
     let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded');
     return this._http.put(this.url+'luces/'+id, {headers:headers});
