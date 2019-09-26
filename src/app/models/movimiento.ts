@@ -1,4 +1,4 @@
-export class movimiento{
+export class Movimiento{
   constructor(
     public id : number,
     public estado: string,

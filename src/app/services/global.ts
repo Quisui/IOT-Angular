@@ -1,3 +1,3 @@
 export var global = {
-  url: 'http://api-rest-PIOT.com.devel/'
+  url: 'http://localhost:8000/'
 }
