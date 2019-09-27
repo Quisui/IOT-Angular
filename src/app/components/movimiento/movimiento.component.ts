@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 import {Movimiento} from '../../models/movimiento';
-=======
-import { Component, OnInit } from '@angular/core';
-import { Movimiento } from '../../models/movimiento';
->>>>>>> master
 import { MovimientoService } from '../../services/movimiento.service';
 
 @Component({
@@ -14,22 +9,17 @@ import { MovimientoService } from '../../services/movimiento.service';
   providers: [MovimientoService]
 })
 export class MovimientoComponent implements OnInit {
+
   public page_title: string;
-<<<<<<< HEAD
   public movimiento:Movimiento;
   public datos;
   public datos10;
-=======
-  public movimiento: Movimiento;
-  public datos;
->>>>>>> master
 
 
   constructor(
     private _movimientoService: MovimientoService
   ) {
     this.page_title = 'movimiento';
-<<<<<<< HEAD
     this.movimiento = new Movimiento(1,'','','');
    }
 
@@ -58,19 +48,25 @@ export class MovimientoComponent implements OnInit {
     this._movimientoService.getLastTen().subscribe(
       response => {
         if (response.status == 'success'){
-          this.datos10 = response.movimiento;
-          console.log(this.datos10);
+          this.datos = response.movimiento;
+          console.log(this.datos);
         }
       },
-=======
-    this.movimiento = new Movimiento(1, '', '', '');
+
+      error => {
+        console.log(error);      
+      }
+    );
   }
 
-  ngOnInit() {
-    this.getDatos();
-  }
-  onSubmit(form) {
->>>>>>> master
+  getRangoFechas(from, to){
+    this._movimientoService.getRangoFechas(from, to).subscribe(
+      response => {
+        if (response.status == 'success'){
+          this.datos = response.Movimientos;
+          console.log(this.datos);
+        }
+      },
 
       error => {
         console.log(error);      
@@ -78,21 +74,5 @@ export class MovimientoComponent implements OnInit {
     );
   }
   
-
-  getDatos() {
-    this._movimientoService.getDatos().subscribe(
-      response => {
-        if (response.status == 'success') {
-          this.datos = response.datos;
-          console.log(this.datos);
-        }
-      },
-
-      error => {
-        console.log(<any>error);
-      }
-    )
-  }
-
 
 }
